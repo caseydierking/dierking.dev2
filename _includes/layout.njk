@@ -2,16 +2,35 @@
 title: My Rad Blog
 ---
 
-<!doctype html>
-<html lang="en">
-<link rel="stylesheet" href="/style.css" />
 
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ title }}</title>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>{{title}}</title>
+    <meta name="author" content="name" />
+    <meta name="description" content="description here" />
+    <meta name="keywords" content="keywords,here" />
+    <link rel="stylesheet" href="/style.css" />
+
   </head>
-  <body>
-    {{ content | safe }}
-  </body>
+
+  
+<body class="bg-gray-100 font-sans leading-normal tracking-normal">
+  <div class=" flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
+  <div class="max-w-xl w-full space-y-8">
+    <div>
+      <img class="mx-auto h-12 w-auto" src="https://tailwindui.com/img/logos/workflow-mark-indigo-600.svg" alt="Workflow">
+      <h2 class="mt-6 text-center text-3xl font-extrabold text-gray-900">
+        {{title}}
+      </h2>
+      <p class="mt-2 text-center text-sm text-gray-600">
+        {{date}}
+      </p>
+    </div>
+ {{ content | safe }}
+</body>
+
 </html>
