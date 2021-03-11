@@ -8,13 +8,22 @@ title: My Rad Blog
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>{{title}}</title>
-    <meta name="author" content="name" />
-    <meta name="description" content="description here" />
-    <meta name="keywords" content="keywords,here" />
+    <meta name="author" content="Casey Dierking" />
+    <meta name="description" content="Developer by Day, Roaster by Night" />
+    <meta name="keywords" content="c#,dotnet,programming,development,software,open-source,sql,python,iis" />
     <link rel="stylesheet" href="/style.css" />
 
   </head>
 
+
+{% set navPages = collections.all | eleventyNavigation %}
+<ul>
+{%- for entry in navPages %}
+  <li{% if entry.url == page.url %} class="text-lg text-red-500"{% endif %}>
+    <a href="{{ entry.url | url }}">{{ entry.title }}</a>
+  </li>
+{%- endfor %}
+</ul>
   
 <body class="bg-gray-100 font-sans leading-normal tracking-normal">
   <div class=" flex items-center justify-center bg-gray-50 py-12 px-4 sm:px-6 lg:px-8">
@@ -25,7 +34,7 @@ title: My Rad Blog
         {{title}}
       </h2>
       <p class="mt-2 text-center text-sm text-gray-600">
-        {{date}}
+        {# {{page.date}} #}
       </p>
     </div>
        {{ content | safe }}
